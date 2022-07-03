@@ -48,7 +48,7 @@ public class SnakeAndLadder
 	}
 public static void main(String[] args)
 {
-	
+	int count=0;
 	System.out.println("Welcome to snake and ladder program");
 	System.out.println("Start Position "+startPosition);
 	while(playerPosition<WININGPOSITION)
@@ -59,6 +59,9 @@ public static void main(String[] args)
 	System.out.println("dieValue "+dieValue);
 	playerPosition=playGame(option,dieValue);
 	System.out.println("playerPosition "+playerPosition);
+	count++;
 	}
+	System.out.println("Number of time dice played to win game "+count);
+	
 }
 }
