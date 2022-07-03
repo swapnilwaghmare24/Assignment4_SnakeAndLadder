@@ -5,6 +5,7 @@ public class SnakeAndLadder
 	static final int NOPLAY=1;
 	static final int LADDER=2;
 	static final int SNAKE=3;
+	static final int WININGPOSITION=100;
 	static int dieValue()
 	{
 		int dieValue=(int)(Math.random()*6)+1;
@@ -20,7 +21,7 @@ public class SnakeAndLadder
 		switch(option)
 		{
 			case NOPLAY:
-			//playerPosition=playerPosition;
+			playerPosition=playerPosition;
 			break;
 			case LADDER:
 			playerPosition=playerPosition+dieValue;
@@ -33,14 +34,18 @@ public class SnakeAndLadder
 	}
 public static void main(String[] args)
 {
-	int option=getOption();
-	int dieValue=dieValue();
+	
 	System.out.println("Welcome to snake and ladder program");
 	System.out.println("Start Position "+startPosition);
 	System.out.println("Player Position "+playerPosition);
+	while(playerPosition<WININGPOSITION)
+	{
+	int option=getOption();
+	int dieValue=dieValue();
 	System.out.println("option "+option);
 	System.out.println("dieValue "+dieValue);
-
-	System.out.println("playerPosition "+playGame(option,dieValue));
+	playerPosition=playGame(option,dieValue);
+	System.out.println("playerPosition "+playerPosition);
+	}
 }
 }
