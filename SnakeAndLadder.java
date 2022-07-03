@@ -24,10 +24,24 @@ public class SnakeAndLadder
 			playerPosition=playerPosition;
 			break;
 			case LADDER:
+			if(playerPosition+dieValue>WININGPOSITION)
+			{
+				playerPosition=playerPosition;
+			}
+			else
+			{
 			playerPosition=playerPosition+dieValue;
+			}
 			break;
 			case SNAKE:
+			if(playerPosition-dieValue<startPosition)
+			{
+				playerPosition=startPosition;
+			}
+			else
+			{
 			playerPosition=playerPosition-dieValue;
+			}
 			break;
 		}
 		return playerPosition;
@@ -37,7 +51,6 @@ public static void main(String[] args)
 	
 	System.out.println("Welcome to snake and ladder program");
 	System.out.println("Start Position "+startPosition);
-	System.out.println("Player Position "+playerPosition);
 	while(playerPosition<WININGPOSITION)
 	{
 	int option=getOption();
